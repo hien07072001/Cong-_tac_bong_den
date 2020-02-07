@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let SwitchButton=function (status) {
+        this.status=status;
+        this.switchOff=function (lamp) {
+            this.status=false;
+            lamp.turnOff();
+
+        };
+        this.switchOn=function (lamp) {
+            this.status=true;
+            lamp.turnOn();
+
+        }
+
+    };
+    let ElectricLamp=function () {
+        this.turnOff=function () {
+            this.status=false;
+            alert("turn off")
+
+
+        };
+        this.turnOn=function () {
+            this.turnOn=function () {
+                this.status=true;
+                alert("turn on")
+
+            }
+
+        };
+
+    };
+    let switchButton= new SwitchButton();
+    let electricLamp=new ElectricLamp();
+    let count=0;
+    while (count<10){
+        switchButton.switchOn(electricLamp);
+        switchButton.switchOff(electricLamp);
+        count++;
+
+    }
+
+</script>
+</body>
+</html>
